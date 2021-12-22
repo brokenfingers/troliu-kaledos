@@ -121,7 +121,7 @@ body * {
   position: absolute;
   animation-name: picking-card;
   animation-duration: 0.5s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 3;
 }
 
 @keyframes picking-card {
@@ -165,7 +165,7 @@ body * {
   left: 0%;
   top: 100%;
   animation-name: loading-animation;
-  animation-duration: 10s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
 }
 

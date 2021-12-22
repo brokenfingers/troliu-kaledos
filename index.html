@@ -38,10 +38,15 @@
     </main>
 
     <script>
-        const div = document.querySelector('div');
-        let questionArray;
-
-        let questionString = `1. Kokį paskutinį melą sakei?
+    
+    let card;
+    let loadAnimation;
+    let questionArray;
+    let buttonArray;
+    let pickingAnimation;
+    let animated;
+    let buttonHolder;
+    let questionString = `1. Kokį paskutinį melą sakei?
 
 2. Koks buvo gėdingiausias dalykas, kurį kada nors padarėte per pasimatymą?
 
@@ -60,8 +65,60 @@
 9. Jei sutiktum džiną, kokie būtų tavo trys norai?
 
 10. Jei galėtumėte paskirti bet ką žemėje į JAV prezidentą, kas tai būtų ir kodėl?`;
-    questionArray = questionString.split(/[\r\n]+/);
+    
 
+    
+    window.addEventListener('load', pageLoaded);
+
+    function pageLoaded() {
+        buttonArray = [...document.querySelectorAll('.buttons  div')];
+        pickingAnimation = document.querySelector('.picking-animation');
+        questionArray = questionString.split(/[\r\n]+/);
+        loadingBar = document.querySelector('.loading-bar');
+        card = document.querySelector('.card');
+        loadAnimation = document.querySelector('.loading-animation');
+        
+        buttonHolder = document.querySelector('.buttons')
+        
+
+
+        buttonArray.forEach(btn =>{
+            btn.addEventListener('click', buttonPressed);
+        });
+
+        loadingBar.addEventListener('animationend', loadingAnimationEnded);
+    }
+
+    function loadingAnimationEnded() {
+            loadAnimation.style.display = "none";
+            buttonHolder.style.display = "flex";
+    }
+
+    
+    
+
+    function buttonPressed(){
+            buttonHolder.style.display = "none";
+            pickingAnimation.style.display = "flex";
+            pickingAnimation.addEventListener('animationend', pickingAnimationEnded)
+            // pickingAnimation.style.display = "none";
+            // buttonHolder.style.display = "flex";
+           
+    }
+
+    function pickingAnimationEnded() {
+        pickingAnimation.style.display = "none";
+        card.style.display = "flex";
+        card.addEventListener('click', closeCard);
+    }
+    
+
+    function closeCard() {
+        this.style.display = "none";
+        buttonHolder.style.display = "flex";
+    }
+
+    
 // console.table(questionArray);
 
     </script>
