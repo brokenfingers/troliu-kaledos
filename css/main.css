@@ -86,7 +86,7 @@ body * {
 
 .picking-animation {
   display: inline-block;
-  /* display: none; */
+  display: none;
   background-color: #fff;
   padding-top: 1em;
   font-size: 20px;
@@ -143,5 +143,46 @@ body * {
   100% {
     right: 30em;
     right: 40em;
+  }
+}
+
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+  position: relative;
+  /* background-color: #fff; */
+}
+
+.loading-bar {
+  height: 20px;
+  width: 2%;
+  background-color: rgb(250, 246, 3);
+  position: absolute;
+  left: 0%;
+  top: 100%;
+  animation-name: loading-animation;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loading-animation {
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 20%;
+  }
+  60% {
+    width: 30%;
+  }
+  80% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
   }
 }
