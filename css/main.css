@@ -23,8 +23,9 @@ body * {
 
 .game-holder {
   padding: 5%;
-  width: 90%;
+  width: 80%;
   height: 70%;
+  overflow: hidden;
   background-color: #4c8800f5;
   display: flex;
   justify-content: center;
@@ -69,8 +70,8 @@ body * {
 }
 
 .card {
-  display: flex;
-  /* display: none; */
+  /* display: flex; */
+  display: none;
   justify-content: center;
   text-align: center;
   font-weight: bold;
@@ -81,4 +82,66 @@ body * {
   background-color: #fff;
   border-radius: 2em;
   border: 0.5em solid #000;
+}
+
+.picking-animation {
+  display: inline-block;
+  /* display: none; */
+  background-color: #fff;
+  padding-top: 1em;
+  font-size: 20px;
+  width: 12em;
+  height: 12em;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5em;
+  border: 0.4em solid #000;
+}
+
+.keyframe > .image {
+  width: 10em;
+  height: 10em;
+  display: inline-block;
+  position: absolute;
+}
+.image:nth-child(1) {
+  left: 0;
+}
+.image:nth-child(2) {
+  left: 10em;
+}
+.image:nth-child(3) {
+  left: 20em;
+}
+.image:nth-child(4) {
+  left: 30em;
+}
+
+.keyframe {
+  position: absolute;
+  animation-name: picking-card;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes picking-card {
+  0% {
+    right: 0;
+  }
+  25% {
+    right: 0;
+    right: 10em;
+  }
+  50% {
+    right: 10em;
+    right: 20em;
+  }
+  75% {
+    right: 20em;
+    right: 30em;
+  }
+  100% {
+    right: 30em;
+    right: 40em;
+  }
 }
