@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Trolių žiburėlis</title>
+</head>
+<body>
+    <main class="content">
+        <div class="game-holder">
+            <div class="dare button">Tiesa</div>
+            <div class="true button">Drąsa</div>
+        </div>
+
+        
+    </main>
+
+    <script>
+        const div = document.querySelector('div');
+        let questionArray;
+
+        let questionString = `1. Kokį paskutinį melą sakei?
+
+2. Koks buvo gėdingiausias dalykas, kurį kada nors padarėte per pasimatymą?
+
+3. Ar kada nors netyčia į ką nors (ar į ką nors!) atsitrenkėte savo automobiliu?
+
+4. Įvardink ką nors, kas tau patinka, bet iš tikrųjų negali pakęsti.
+
+5. Koks tavo pats keisčiausias slapyvardis?
+
+6. Kokia buvo jūsų fiziškai skausmingiausia patirtis?
+
+7. Kokius tiltus tu džiaugiesi, kad sudegei?
+
+8. Kokį beprotiškiausią dalyką esi padaręs viešajame transporte?
+
+9. Jei sutiktum džiną, kokie būtų tavo trys norai?
+
+10. Jei galėtumėte paskirti bet ką žemėje į JAV prezidentą, kas tai būtų ir kodėl?`;
+    questionArray = questionString.split(/[\r\n]+/);
+
+console.table(questionArray);
+    </script>
+</body>
+</html>
