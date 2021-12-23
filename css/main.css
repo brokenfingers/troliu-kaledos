@@ -165,7 +165,7 @@ body * {
   left: 0%;
   top: 100%;
   animation-name: loading-animation;
-  animation-duration: 1s;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
 }
 
