@@ -39,6 +39,7 @@
 
     <script>
     
+    let cardValue = '';
     let card;
     let loadAnimation;
     let questionArray;
@@ -114,8 +115,26 @@
     
 
     function closeCard() {
+        pickACard(questionArray);
         this.style.display = "none";
         buttonHolder.style.display = "flex";
+    }
+
+    function pickACard(arr) {
+        let arrLenght = arr.length > 0 ? arr.length : 0;
+        let randomIndex = random(arrLenght);
+        console.log(arrLenght);
+        console.log(randomIndex);
+        cardValue = arr[randomIndex];
+        arr.splice(randomIndex, 1);
+        console.log(cardValue);
+        card.textContent = cardValue;
+
+    }
+
+    function random(num) {
+        num = num > 1 ? Math.floor(Math.random() * (num - 1)) : 0;
+        return num;
     }
 
     
