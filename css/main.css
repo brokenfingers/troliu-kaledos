@@ -38,6 +38,18 @@ body * {
   width: 100%;
   height: 100%;
 }
+
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
+  div.dare,
+  div.true {
+    width: 80%;
+    height: 40%;
+  }
+}
+
 .dare,
 .true {
   display: flex;
